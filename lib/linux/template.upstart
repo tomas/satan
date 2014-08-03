@@ -1,0 +1,22 @@
+description  "{{name}}"
+author       "{{author}}"
+
+start on startup
+stop on shutdown
+kill signal QUIT
+
+respawn
+respawn limit 20 5
+
+{{#if user}}
+setuid {{user}}
+{{/if}}
+
+{{#env}}
+env {{key}}={{value}}
+{{/env}}
+
+script
+  chdir {{path}}
+  exec {{bin}}
+end script
