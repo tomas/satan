@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+
+var satan   = require('..'),
+    command = process.argv[2],
+    name    = process.argv[3];
+
+if (!name)
+  return usage();
+
+if (process.getuid && process.getuid() != 0) {
+  console.log('Almighty satan requires root. What did you expect?');
+  process.exit(1);
+}
+
+function usage() {
+  console.log('Usage: satan [command] [daemon-name]');
+  console.log('Where command is one of: exists, create, destroy.')
+  process.exit(1);
+}
+
+function done(err, res) {
+  if (err)
+    console.log('Error: ' + err.message);
+  else
+    console.log('Success!');
+}
+
+switch (command) {
+  case 'exists':
+    return satan.exists(name, function(err, bool) { 
+      console.log(err ? 'Error: ' + err.message : 'Exists: ' + bool); 
+    });
+    break;
+
+  // case 'create':
+  //  var opts = { name: name };
+  //  return satan.create(opts, done);
+  //  break;
+
+  case 'remove':
+  case 'delete':
+  case 'destroy':
+    return satan.destroy(name, done);
+    break;
+
+  default:
+    usage();
+}

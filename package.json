@@ -1,0 +1,17 @@
+{
+  "name": "satan",
+  "version": "0.1.0",
+  "description": "Bring daemons to life or destroy them forever.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "satan": "./bin/satan"
+  },
+  "author": "Tomas Pollak <tomas@forkhq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "launchd": "0.0.5"
+  }
+}
