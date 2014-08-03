@@ -33,8 +33,11 @@ switch (command) {
     break;
 
   // case 'create':
-  //  var opts = { name: name };
-  //  return satan.create(opts, done);
+  //  return satan.create(get_opts(), done);
+  //  break;
+
+  // case 'ensure_created':
+  //  return satan.ensure_created(get_opts(), done);
   //  break;
 
   case 'remove':
