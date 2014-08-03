@@ -8,7 +8,7 @@
 		<false/>
 	</dict>
 	<key>Label</key>
-	<string>{{name}}</string>
+	<string>{{key}}</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>{{bin}}</string>
