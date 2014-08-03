@@ -21,7 +21,7 @@ DAEMON="{{bin}}"
 DAEMON_OPTS="{{opts}}"
 WORKING_DIR="{{path}}"
 USER="{{user}}"
-NAME={{key}}
+NAME="{{key}}"
 DESC="{{name}}"
 
 # Include defaults if available
