@@ -1,7 +1,7 @@
 {
   "name": "satan",
   "version": "0.1.0",
-  "description": "Bring daemons to life or destroy them forever.",
+  "description": "Bring daemons to life or destroy them forever. OSX/Linux/Windows.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
