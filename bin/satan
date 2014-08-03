@@ -43,6 +43,10 @@ switch (command) {
     return satan.destroy(name, done);
     break;
 
+  case 'ensure_destroyed':
+    return satan.ensure_destroyed(name, done);
+    break;
+
   default:
     usage();
 }
