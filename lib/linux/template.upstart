@@ -8,9 +8,9 @@ kill signal QUIT
 respawn
 respawn limit 20 5
 
-{{#if user}}
+{{#user}}
 setuid {{user}}
-{{/if}}
+{{/user}}
 
 {{#env}}
 env {{key}}={{value}}

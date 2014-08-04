@@ -12,9 +12,9 @@
   "author": "Tomas Pollak <tomas@forkhq.com>",
   "license": "MIT",
   "dependencies": {
-    "handlebars": "^2.0.0-alpha.4",
     "launchd": "0.0.5",
     "linus": "0.0.3",
+    "minstache": "^1.2.0",
     "which": "^1.0.5"
   }
 }
