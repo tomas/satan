@@ -2,7 +2,7 @@ description  "{{name}}"
 author       "{{author}}"
 
 start on startup
-stop on shutdown
+stop on runlevel [016]
 kill signal QUIT
 
 respawn
