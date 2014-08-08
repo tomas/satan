@@ -12,6 +12,7 @@
   "author": "Tomas Pollak <tomas@forkhq.com>",
   "license": "MIT",
   "dependencies": {
+    "async": "^0.9.0",
     "launchd": "0.0.5",
     "linus": "0.0.3",
     "minstache": "^1.2.0",

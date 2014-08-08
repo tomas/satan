@@ -1,0 +1,11 @@
+[Unit]
+Description={{desc}}
+After=syslog.target
+
+[Service]
+Type=forking
+ExecStart={{bin}}
+User={{user}}
+
+[Install]
+WantedBy=multi-user.target
