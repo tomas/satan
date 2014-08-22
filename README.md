@@ -53,13 +53,13 @@ All arguments are optional, except for `bin` and `key`. In Linux, you can also p
 Windows
 -------
 
-To daemonize your processes in Windows, Satan uses a nitfy tool call `nssm` (e.g. the 'non sucking service manager') to spawn and keep your process up and running. So, when calling `create`, Satan basically makes a copy of the `nssm.exe` binary, and creates a new system service that points to it. 
+To daemonize your processes in Windows, Satan uses a nitfy tool call `nssm` (e.g. the 'non sucking service manager') to spawn and keep your process up and running. So, when calling `create`, Satan basically makes a copy of the `nssm.exe` binary, and creates a new system service that points to it.
 
 By default the `nssm.exe` binary is copied to the same path as your bin, but you can use a custom location for the nssm.exe binary by passing a `daemon_path` option, like this:
 
     var opts = {
       bin  : 'npm start',
-      path : 'C:\Users\tomas\apps\static-http'
+      path : 'C:\\Users\\tomas\\apps\\static-http'
       key  : 'StaticHTTP',
       name : 'Static HTTP Server',
       desc : 'Serves static files from my Public folder to local network users.',
@@ -74,7 +74,7 @@ Now, if you already _have_ a Windows Service executable, and don't need to use t
 
     var opts = {
       daemon_path : null,
-      bin  : 'C:\IBN\Profiles\QRDX\corpsvc.exe',
+      bin  : 'C:\\IBN\\Profiles\\QRDX\\corpsvc.exe',
       key  : 'CorporateService',
       name : 'Very Corporate Service',
       desc : 'Reminds users that they are part of a very corporate environment.'
@@ -116,7 +116,7 @@ On creation:
 
     - `key`: Identifier for the service. OSX users should use the `com.example.app` notation.
     - `bin`: Absolute or relative path to the executable. If relative, make sure to include the `path` option.
-    - `args`: Additional arguments to pass to the bin. Optional. Not an array, just a string. 
+    - `args`: Additional arguments to pass to the bin. Optional. Not an array, just a string.
     - `path`: Absolute path to set as the current working directory before calling the bin. Somewhat optional (read the `bin` part above).
     - `name`: More descriptive name for your daemon, to be included in the init script or the Windows Services list.
     - `desc`: Even more descriptive text for your daemon. Not necessary, but makes it look nicer.

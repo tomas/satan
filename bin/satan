@@ -27,8 +27,8 @@ function done(err, res) {
 
 switch (command) {
   case 'exists':
-    return satan.exists(name, function(err, bool) { 
-      console.log(err ? 'Error: ' + err.message : 'Exists: ' + bool); 
+    return satan.exists(name, function(err, bool) {
+      console.log(err ? 'Error: ' + err.message : 'Exists: ' + bool);
     });
     break;
 
@@ -39,6 +39,18 @@ switch (command) {
   // case 'ensure_created':
   //  return satan.ensure_created(get_opts(), done);
   //  break;
+
+  case 'start':
+    return satan.start(name, done);
+    break;
+
+  case 'stop':
+    return satan.stop(name, done);
+    break;
+
+  case 'ensure_stopped':
+    return satan.ensure_stopped(name, done);
+    break;
 
   case 'remove':
   case 'delete':
