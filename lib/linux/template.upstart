@@ -5,7 +5,7 @@ start on startup
 stop on runlevel [016]
 kill signal QUIT
 
-{{^wait}}
+{{#wait}}
 post-stop exec sleep {{wait}}
 {{/wait}}
 

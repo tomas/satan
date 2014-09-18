@@ -17,9 +17,13 @@
 	<string>{{path}}</string>
 	<key>RunAtLoad</key>
 	<true/>
+{{#user}}
 	<key>UserName</key>
 	<string>{{user}}</string>
+{{/user}}
+{{#wait}}
 	<key>ThrottleInterval</key>
 	<integer>{{wait}}</integer>
+{{/wait}}
 </dict>
 </plist>
