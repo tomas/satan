@@ -5,8 +5,11 @@ start on startup
 stop on runlevel [016]
 kill signal QUIT
 
+{{^wait}}
+post-stop exec sleep {{wait}}
+{{/wait}}
+
 respawn
-respawn limit 20 5
 
 {{#user}}
 setuid {{user}}
