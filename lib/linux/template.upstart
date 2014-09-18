@@ -4,10 +4,21 @@ author       "{{author}}"
 start on startup
 stop on runlevel [016]
 kill signal QUIT
+kill timeout {{kill_timeout}}
 
-{{#wait}}
-post-stop exec sleep {{wait}}
-{{/wait}}
+{{#reload_signal}}
+reload signal {{reload_signal}}
+{{/reload_signal}}
+
+{{#respawn_wait}}
+post-stop exec sleep {{respawn_wait}}
+{{/respawn_wait}}
+
+{{#post_stop_script}}
+post-stop script
+  {{post_stop_script}}
+end script
+{{/post_stop_script}}
 
 respawn
 

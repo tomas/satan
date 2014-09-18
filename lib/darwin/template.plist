@@ -17,13 +17,19 @@
 	<string>{{path}}</string>
 	<key>RunAtLoad</key>
 	<true/>
+	<key>ExitTimeOut</key>
+	<integer>{{kill_timeout}}</integer>
 {{#user}}
 	<key>UserName</key>
 	<string>{{user}}</string>
 {{/user}}
-{{#wait}}
-	<key>ThrottleInterval</key>
-	<integer>{{wait}}</integer>
-{{/wait}}
+{{#watch_paths}}
+	<key>WatchPaths</key>
+	<array>
+	{{#watch_paths_array}}
+		<string>{{path}}</string>
+	{{/watch_paths_array}}
+	</array>
+{{/watch_paths}}
 </dict>
 </plist>
