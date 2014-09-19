@@ -16,7 +16,7 @@ post-stop exec sleep {{respawn_wait}}
 
 {{#post_stop_script}}
 post-stop script
-  {{post_stop_script}}
+  {{!post_stop_script}}
 end script
 {{/post_stop_script}}
 
