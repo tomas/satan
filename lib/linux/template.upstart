@@ -14,6 +14,18 @@ reload signal {{reload_signal}}
 post-stop exec sleep {{respawn_wait}}
 {{/respawn_wait}}
 
+{{#pre_start_script}}
+pre-start script
+  {{!pre_start_script}}
+end script
+{{/pre_start_script}}
+
+{{#post_start_script}}
+post-start script
+  {{!post_start_script}}
+end script
+{{/post_start_script}}
+
 {{#pre_stop_script}}
 pre-stop script
   {{!pre_stop_script}}
