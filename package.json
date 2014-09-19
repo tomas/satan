@@ -1,6 +1,6 @@
 {
   "name": "satan",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "Bring daemons to life or destroy them forever. OSX/Linux/Windows.",
   "main": "index.js",
   "scripts": {
