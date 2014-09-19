@@ -1,9 +1,9 @@
 description  "{{name}}"
 author       "{{author}}"
 
-start on startup
-stop on runlevel [016]
-kill signal QUIT
+start on {{start_on}}
+stop on {{stop_on}}
+kill signal {{kill_signal}}
 kill timeout {{kill_timeout}}
 
 {{#reload_signal}}
@@ -13,6 +13,12 @@ reload signal {{reload_signal}}
 {{#respawn_wait}}
 post-stop exec sleep {{respawn_wait}}
 {{/respawn_wait}}
+
+{{#pre_stop_script}}
+pre-stop script
+  {{!pre_stop_script}}
+end script
+{{/pre_stop_script}}
 
 {{#post_stop_script}}
 post-stop script
