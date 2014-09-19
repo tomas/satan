@@ -23,6 +23,10 @@
 	<key>UserName</key>
 	<string>{{user}}</string>
 {{/user}}
+{{#respawn_wait}}
+	<key>ThrottleInterval</key>
+	<integer>{{respawn_wait}}</integer>
+{{/respawn_wait}}
 {{#watch_paths}}
 	<key>WatchPaths</key>
 	<array>
