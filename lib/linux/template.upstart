@@ -1,8 +1,8 @@
 description  "{{name}}"
 author       "{{author}}"
 
-start on {{start_on}}
-stop on {{stop_on}}
+start on {{up_start_on}}
+stop on {{up_stop_on}}
 kill signal {{kill_signal}}
 kill timeout {{kill_timeout}}
 
@@ -44,9 +44,11 @@ respawn
 setuid {{user}}
 {{/user}}
 
+{{#has_env}}
 {{#env}}
 env {{key}}={{value}}
 {{/env}}
+{{/has_env}}
 
 script
   chdir {{path}}

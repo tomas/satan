@@ -1,11 +1,31 @@
 [Unit]
 Description={{desc}}
-After=syslog.target
+After={{sd_start_after}}
 
 [Service]
-Type=forking
 ExecStart={{bin}}
+WorkingDirectory={{path}}
+Restart={{sd_restart}}
+
+{{#respawn_wait}}
+RestartSec={{respawn_wait}}
+{{/respawn_wait}}
+
+{{#user}}
 User={{user}}
+{{/user}}
+
+{{#has_env}}
+Environment={{#env}}"{{key}}={{value}}" {{/env}}
+{{/has_env}}
+
+{{#kill_timeout}}
+TimeoutStopSec={{kill_timeout}}
+{{/kill_timeout}}
+
+{{#kill_signal}}
+KillSignal={{kill_signal}}
+{{/kill_signal}}
 
 [Install]
 WantedBy=multi-user.target
