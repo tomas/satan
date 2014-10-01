@@ -10,33 +10,33 @@ kill timeout {{kill_timeout}}
 reload signal {{reload_signal}}
 {{/reload_signal}}
 
-{{#respawn_wait}}
-post-stop exec sleep {{respawn_wait}}
-{{/respawn_wait}}
+{{#up_respawn_wait}}
+post-stop exec sleep {{up_respawn_wait}}
+{{/up_respawn_wait}}
 
-{{#pre_start_script}}
+{{#up_pre_start_script}}
 pre-start script
-  {{!pre_start_script}}
+  {{!up_pre_start_script}}
 end script
-{{/pre_start_script}}
+{{/up_pre_start_script}}
 
-{{#post_start_script}}
+{{#up_post_start_script}}
 post-start script
-  {{!post_start_script}}
+  {{!up_post_start_script}}
 end script
-{{/post_start_script}}
+{{/up_post_start_script}}
 
-{{#pre_stop_script}}
+{{#up_pre_stop_script}}
 pre-stop script
-  {{!pre_stop_script}}
+  {{!up_pre_stop_script}}
 end script
-{{/pre_stop_script}}
+{{/up_pre_stop_script}}
 
-{{#post_stop_script}}
+{{#up_post_stop_script}}
 post-stop script
-  {{!post_stop_script}}
+  {{!up_post_stop_script}}
 end script
-{{/post_stop_script}}
+{{/up_post_stop_script}}
 
 respawn
 

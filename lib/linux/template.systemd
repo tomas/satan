@@ -7,9 +7,9 @@ ExecStart={{bin}}
 WorkingDirectory={{path}}
 Restart={{sd_restart}}
 
-{{#respawn_wait}}
-RestartSec={{respawn_wait}}
-{{/respawn_wait}}
+{{#sd_respawn_wait}}
+RestartSec={{sd_respawn_wait}}
+{{/sd_respawn_wait}}
 
 {{#user}}
 User={{user}}
