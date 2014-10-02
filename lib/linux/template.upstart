@@ -6,6 +6,12 @@ stop on {{up_stop_on}}
 kill signal {{kill_signal}}
 kill timeout {{kill_timeout}}
 
+respawn
+
+{{#user}}
+setuid {{user}}
+{{/user}}
+
 {{#reload_signal}}
 reload signal {{reload_signal}}
 {{/reload_signal}}
@@ -38,19 +44,14 @@ post-stop script
 end script
 {{/up_post_stop_script}}
 
-respawn
-
-{{#user}}
-setuid {{user}}
-{{/user}}
-
 {{#has_env}}
 {{#env}}
-env {{key}}={{value}}
-{{/env}}
+env {{key}}={{value}}{{/env}}
 {{/has_env}}
 
 script
+  {{#path}}
   chdir {{path}}
+  {{/path}}
   exec {{bin}}
 end script

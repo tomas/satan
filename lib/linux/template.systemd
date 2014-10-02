@@ -4,7 +4,9 @@ After={{sd_start_after}}
 
 [Service]
 ExecStart={{bin}}
+{{#path}}
 WorkingDirectory={{path}}
+{{/path}}
 Restart={{sd_restart}}
 
 {{#sd_respawn_wait}}
