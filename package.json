@@ -4,7 +4,7 @@
   "description": "Bring daemons to life or destroy them forever. OSX/Linux/Windows.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "bin": {
     "satan": "./bin/satan"
