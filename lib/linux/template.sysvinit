@@ -3,7 +3,7 @@
 # {{key}} init script
 #
 # chkconfig:   2345 20 80
-# description: starts {{desc}}
+# description: starts {{name}}
 #
 
 ### BEGIN INIT INFO
@@ -12,8 +12,8 @@
 # Required-Stop:     $local_fs $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: {{desc}}
-# Description:       {{desc}} using start-stop-daemon
+# Short-Description: {{name}}
+# Description:       {{desc}}
 ### END INIT INFO
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
