@@ -21,6 +21,10 @@ User={{user}}
 Environment={{#env}}"{{key}}={{value}}" {{/env}}
 {{/has_env}}
 
+{{#sd_kill_mode}}
+KillMode={{sd_kill_mode}}
+{{/sd_kill_mode}}
+
 {{#kill_timeout}}
 TimeoutStopSec={{kill_timeout}}
 {{/kill_timeout}}
