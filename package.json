@@ -18,5 +18,9 @@
     "minstache": "^1.2.0",
     "whenever": "0.0.4",
     "which": "^1.0.5"
+  },
+  "devDependencies": {
+    "should": "",
+    "sinon": ""
   }
 }
