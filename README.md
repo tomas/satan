@@ -53,7 +53,7 @@ All arguments are optional, except for `bin` and `key`. In Linux, you can also p
 Windows
 -------
 
-To daemonize your processes in Windows, Satan uses a nitfy tool call `nssm` (e.g. the 'non sucking service manager') to spawn and keep your process up and running. So, when calling `create`, Satan basically makes a copy of the `nssm.exe` binary, and creates a new system service that points to it.
+To daemonize your processes in Windows, Satan uses a nitfy tool called `nssm` (i.e. the 'non sucking service manager') to spawn and keep your process up and running. So, when calling `create`, Satan basically makes a copy of the `nssm.exe` binary, and creates a new system service that points to it.
 
 By default the `nssm.exe` binary is copied to the same path as your bin, but you can use a custom location for the nssm.exe binary by passing a `daemon_path` option, like this:
 
