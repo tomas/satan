@@ -25,7 +25,7 @@ Example
       });
     })
 
-You can create a daemon out of any process, of course. Just point the bin to where it should.
+You can create a daemon out of any process -- not necessarily a Node.js app. Just point the bin to where it should.
 
     var opts = {
       bin  : '/path/to/my/daemon.py',
