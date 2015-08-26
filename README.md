@@ -36,7 +36,7 @@ You can create a daemon out of any process -- not necessarily a Node.js app. Jus
       console.log(err || 'Let me do your bidding, master.');
     });
 
-All arguments are optional, except for `bin` and `key`. In Linux, you can also pass both `name` and `desc` options, which will be inserted in the generated init script. Satan support sysinitv, upstart and systemd and automatically detects which one your Linux uses.
+All arguments are optional, except for `bin` and `key`. In Linux, you can also pass both `name` and `desc` options, which will be inserted in the generated init script. Satan supports **sysinitv**, **upstart** and **systemd** and automatically detects which one your Linux uses.
 
     var opts = {
       bin  : 'puma -p 8000',
@@ -125,6 +125,8 @@ Windows-only options:
 
     - daemon_path: Custom path to use for the `nssm.exe` binary  when setting up your daemon. If `null` or `false`, Satan assumes your bin can run as a Windows Service and will not copy any additional binaries.
     - daemon_name: Custom name to use for the `nssm.exe` executable. Optional.
+
+There are a slew of other options available for fine-tuning OSX and Linux daemons. Take a look at the [lib/builder.js script](https://github.com/tomas/satan/blob/master/lib/builder.js) for more satanic tweaks.
 
 Final part
 ----------
