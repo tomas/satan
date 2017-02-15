@@ -9,10 +9,11 @@ Example
     var satan = require('satan');
 
     var opts = {
-      bin  : '/usr/bin/node',                           // full path to bin
-      args : 'app.js -p 8001',                          // command line arguments
-      path : '/home/tomas/code/secret-project',         // working directory
-      key  : 'secret-project'                           // for identifying the service
+      bin  : '/usr/bin/node',                        // full path to bin
+      user : 'deploy',                               // user to run the service as
+      args : 'app.js -p 8001',                       // command line arguments
+      path : '/home/deploy/apps/secret-project',     // working directory
+      key  : 'secret-project'                        // for identifying the service
     }
 
     satan.create(opts, function(err) {
@@ -29,7 +30,8 @@ You can create a daemon out of any process -- not necessarily a Node.js app. Jus
 
     var opts = {
       bin  : '/path/to/my/daemon.py',
-      key  : 'com.example.daemon'
+      key  : 'com.example.daemon',
+      user : 'nobody'
     }
 
     satan.create(opts, function(err) {
