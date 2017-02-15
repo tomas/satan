@@ -37,7 +37,7 @@ describe('generating', function() {
     after(reset_platform);
 
     it('key is required', function(done) {
-      var opts = { bin: '/path/to/bin' };
+      var opts = { bin: '/bin/true' };
 
       satan.test_create(opts, function(err) {
         err.should.be.a.Error;
@@ -47,7 +47,7 @@ describe('generating', function() {
     })
 
     it('defaults are set to their defaults', function(done) {
-      var opts = { key: 'test-foo', bin: '/path/to/bin' };
+      var opts = { key: 'test-foo', bin: '/bin/true' };
 
       satan.test_create(opts, function(err, res) {
         res.toString().should.containEql('start on startup');
@@ -59,7 +59,7 @@ describe('generating', function() {
     })
 
     it('optional paths are optional', function(done) {
-      var opts = { key: 'test-foo', bin: '/path/to/bin' };
+      var opts = { key: 'test-foo', bin: '/bin/true' };
 
       satan.test_create(opts, function(err, res) {
         res.toString().should.not.containEql('user');
@@ -78,7 +78,7 @@ describe('generating', function() {
     })
 
     it('path is set when passed', function(done) {
-      var opts = { key: 'test-foo', bin: '/path/to/bin', path: '/tmp' };
+      var opts = { key: 'test-foo', bin: '/bin/true', path: '/tmp' };
 
       satan.test_create(opts, function(err, res) {
         res.toString().should.containEql('chdir /tmp');
@@ -87,7 +87,7 @@ describe('generating', function() {
     })
 
     it('respawn wait too', function(done) {
-      var opts = { key: 'test-foo', bin: '/path/to/bin', respawn_wait: 9 };
+      var opts = { key: 'test-foo', bin: '/bin/true', respawn_wait: 9 };
 
       satan.test_create(opts, function(err, res) {
         res.toString().should.containEql('post-stop exec sleep 9');
@@ -96,7 +96,7 @@ describe('generating', function() {
     })
 
     it('kill timeout is set', function(done) {
-      var opts = { key: 'test-foo', bin: '/path/to/bin', kill_timeout: 12 };
+      var opts = { key: 'test-foo', bin: '/bin/true', kill_timeout: 12 };
 
       satan.test_create(opts, function(err, res) {
         res.toString().should.containEql('kill timeout 12');
@@ -117,7 +117,7 @@ describe('generating', function() {
     })
 
     it('key is required', function(done) {
-      var opts = { bin: '/path/to/bin' };
+      var opts = { bin: '/bin/true' };
 
       satan.test_create(opts, function(err) {
         err.should.be.a.Error;
@@ -127,7 +127,7 @@ describe('generating', function() {
     })
 
     it('defaults are set to their defaults', function(done) {
-      var opts = { key: 'test-foo', bin: '/path/to/bin' };
+      var opts = { key: 'test-foo', bin: '/bin/true' };
 
       satan.test_create(opts, function(err, res) {
         res.toString().should.containEql('After=network.target');
@@ -140,7 +140,7 @@ describe('generating', function() {
     })
 
     it('optional paths are optional', function(done) {
-      var opts = { key: 'test-foo', bin: '/path/to/bin' };
+      var opts = { key: 'test-foo', bin: '/bin/true' };
 
       satan.test_create(opts, function(err, res) {
         res.toString().should.not.containEql('User=');
@@ -152,7 +152,7 @@ describe('generating', function() {
     })
 
     it('path is set when passed', function(done) {
-      var opts = { key: 'test-foo', bin: '/path/to/bin', path: '/tmp' };
+      var opts = { key: 'test-foo', bin: '/bin/true', path: '/tmp' };
 
       satan.test_create(opts, function(err, res) {
         res.toString().should.containEql('WorkingDirectory=/tmp');
@@ -161,7 +161,7 @@ describe('generating', function() {
     })
 
     it('respawn wait too', function(done) {
-      var opts = { key: 'test-foo', bin: '/path/to/bin', respawn_wait: 9 };
+      var opts = { key: 'test-foo', bin: '/bin/true', respawn_wait: 9 };
 
       satan.test_create(opts, function(err, res) {
         res.toString().should.containEql('RestartSec=9');
@@ -170,7 +170,7 @@ describe('generating', function() {
     })
 
     it('kill timeout is set', function(done) {
-      var opts = { key: 'test-foo', bin: '/path/to/bin', kill_timeout: 12 };
+      var opts = { key: 'test-foo', bin: '/bin/true', kill_timeout: 12 };
 
       satan.test_create(opts, function(err, res) {
         res.toString().should.containEql('TimeoutStopSec=12');

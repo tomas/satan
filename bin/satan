@@ -4,6 +4,7 @@ var satan   = require('..'),
     command = process.argv[2],
     name    = process.argv[3],
     dirname = require('path').dirname,
+    resolve = require('path').resolve,
     argv    = require('optimist').argv;
 
 if (!name)
@@ -16,15 +17,15 @@ if (process.getuid && process.getuid() != 0) {
 
 function usage() {
   console.log('Usage: satan [command] [daemon-name]');
-  console.log('Where command is one of: exists, create, ensure_created, start, stop, ensure_stopped, destroy, ensure_destroyed.')
+  console.log('Where command is one of: exists, status, create, ensure_created, start, stop, ensure_stopped, destroy, ensure_destroyed.')
   process.exit(1);
 }
 
 function get_opts() {
   var obj = {
     key: name,
-    bin: argv.bin,
-    path: argv.path || dirname(argv.bin),
+    bin:  resolve(argv.bin),
+    path: argv.path ? resolve(argv.path) : resolve(dirname(argv.bin)),
     args: argv.args,
     user: argv.user,
     name: argv.name,
@@ -69,6 +70,10 @@ switch (command) {
 
   case 'ensure_stopped':
     return satan.ensure_stopped(name, done);
+    break;
+
+  case 'status':
+    return satan.status(name, function() { });
     break;
 
   case 'remove':
