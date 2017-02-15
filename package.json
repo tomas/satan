@@ -16,6 +16,7 @@
     "launchd": "0.0.5",
     "linus": "0.0.6",
     "minstache": "^1.2.0",
+    "optimist": "^0.6.1",
     "whenever": "0.0.4",
     "which": "^1.0.5"
   },
