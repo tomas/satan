@@ -20,9 +20,16 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 DAEMON="{{bin}}"
 DAEMON_OPTS="{{opts}}"
 WORKING_DIR="{{path}}"
-USER="{{user}}"
 NAME="{{key}}"
 DESC="{{name}}"
+
+{{#user}}
+USER="{{user}}"
+{{/user}}
+
+{{^user}}
+USER="root"
+{{/user}}
 
 # Include defaults if available
 if [ -f /etc/default/{{key}} ]; then
@@ -34,12 +41,11 @@ test -x $DAEMON || exit 0
 set -e
 . /lib/lsb/init-functions
 
-start(){
-  start-stop-daemon --start --quiet -d $WORKING_DIR -c $USER --pidfile /var/run/$NAME.pid \
-    --exec $DAEMON --background --make-pidfile -- $DAEMON_OPTS || true
+start() {
+  start-stop-daemon --start --quiet -d $WORKING_DIR -c $USER --pidfile /var/run/$NAME.pid --exec $DAEMON --background --make-pidfile -- $DAEMON_OPTS || true
 }
 
-stop(){
+stop() {
   start-stop-daemon --stop --signal QUIT --quiet --pidfile /var/run/$NAME.pid || true
 }
 
