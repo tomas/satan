@@ -57,8 +57,8 @@ switch (command) {
     break;
 
   case 'ensure_created':
-   return satan.ensure_created(get_opts(), done);
-   break;
+    return satan.ensure_created(get_opts(), done);
+    break;
 
   case 'start':
     return satan.start(name, done);
