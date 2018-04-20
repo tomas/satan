@@ -18,6 +18,11 @@ if (process.getuid && process.getuid() != 0) {
 function usage() {
   console.log('Usage: satan [command] [daemon-name]');
   console.log('Where command is one of: exists, status, create, ensure_created, start, stop, ensure_stopped, destroy, ensure_destroyed.')
+  console.log('\nExamples:\n\tsatan create my-service --bin /path/to/bin --args "some args" --user someone');
+  console.log('\tsatan start my-service');
+  console.log('\tsatan status my-service');
+  console.log('\tsatan stop my-service');
+  console.log('\tsatan destroy my-service');
   process.exit(1);
 }
 
