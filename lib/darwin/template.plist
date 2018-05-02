@@ -13,8 +13,10 @@
 	<array>
 		<string>{{bin}}</string>
 	</array>
+{{#path}}
 	<key>WorkingDirectory</key>
 	<string>{{path}}</string>
+{{/path}}
 	<key>RunAtLoad</key>
 	<true/>
 	<key>ExitTimeOut</key>
