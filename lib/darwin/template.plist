@@ -23,6 +23,10 @@
 	<key>UserName</key>
 	<string>{{user}}</string>
 {{/user}}
+{{#start_interval}}
+	<key>StartInterval</key>
+	<integer>{{start_interval}}</integer>
+{{/start_interval}}
 {{#ld_respawn_wait}}
 	<key>ThrottleInterval</key>
 	<integer>{{ld_respawn_wait}}</integer>
